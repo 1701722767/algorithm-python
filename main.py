@@ -2,6 +2,7 @@ import sys
 from apriori import Apriori
 from kmenas import Kmeans
 from randomForest import RandomForest
+from pca import Pca
 from cmd import Cmd
 
 
@@ -17,6 +18,10 @@ algorithms = [
     {
         "label": "Random Forest",
         "performer": RandomForest(),
+    },
+    {
+        "label": "Pca",
+        "performer": Pca(),
     },
 
 ]
