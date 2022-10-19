@@ -1,11 +1,22 @@
 import sys
 from apriori import Apriori
+from knn import Knn
 from cmd import Cmd
+from decision_tree import DecisionTree
+
 
 algorithms = [
     {
         "label": "Apriori",
         "performer": Apriori(),
+    },
+    {
+        "label": "Knn",
+        "performer": Knn(),
+    },
+    {
+        "label": "Decision Tree",
+        "performer": DecisionTree(),
     },
 ]
 
