@@ -3,7 +3,10 @@ from apriori import Apriori
 from kmenas import Kmeans
 from randomForest import RandomForest
 from pca import Pca
+from knn import Knn
 from cmd import Cmd
+from decision_tree import DecisionTree
+
 
 
 algorithms = [
@@ -24,6 +27,14 @@ algorithms = [
         "performer": Pca(),
     },
 
+    {
+        "label": "Knn",
+        "performer": Knn(),
+    },
+    {
+        "label": "Decision Tree",
+        "performer": DecisionTree(),
+    },
 ]
 
 def cmd():
