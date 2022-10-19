@@ -1,12 +1,18 @@
 import sys
 from apriori import Apriori
+from kmenas import Kmeans
 from cmd import Cmd
+
 
 algorithms = [
     {
         "label": "Apriori",
         "performer": Apriori(),
     },
+    {
+        "label": "Kmeans",
+        "performer": Kmeans(),
+    }
 ]
 
 def cmd():
