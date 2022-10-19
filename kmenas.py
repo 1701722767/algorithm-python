@@ -27,7 +27,7 @@ class Kmeans:
             name=Cmd.GetString("enter the name of variables "+ str(i+1) + ": ")
             datas=[]
             for j in range(int(self.dataNumbers)):
-                datas.append(Cmd.GetNumber("enter the data: ",1,100))
+                datas.append(Cmd.GetNumber("enter the data: ",0,100))
             self.values[name]=datas
 
         self.values=pd.DataFrame(self.values)

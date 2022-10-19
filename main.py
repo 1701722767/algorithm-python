@@ -1,6 +1,7 @@
 import sys
 from apriori import Apriori
 from kmenas import Kmeans
+from randomForest import RandomForest
 from cmd import Cmd
 
 
@@ -12,7 +13,12 @@ algorithms = [
     {
         "label": "Kmeans",
         "performer": Kmeans(),
-    }
+    },
+    {
+        "label": "Random Forest",
+        "performer": RandomForest(),
+    },
+
 ]
 
 def cmd():
