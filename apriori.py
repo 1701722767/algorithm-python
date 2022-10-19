@@ -6,6 +6,10 @@ from cmd import Cmd
 
 
 class Apriori:
+    # For example
+    # transactions = [('EGGS', 'BACON', 'SOUP'), ('EGGS', 'BACON', 'APPLE'), ('SOUP', 'BAACON', 'BANANA'), ('BANANA', 'APPLE', 'SOUP')]
+
+
     transactions = None
     minSupport = 0
     minConfidence = 0
@@ -26,19 +30,14 @@ class Apriori:
             transactions.append(transaction)
 
         self.transactions = transactions
-        self.transactions = [('EGGS', 'BACON', 'SOUP'), ('EGGS', 'BACON', 'APPLE'), ('SOUP', 'BAACON', 'BANANA'), ('BANANA', 'APPLE', 'SOUP')]
 
     def run(self):
         _, rules = apriori(self.transactions, min_support=self.minSupport, min_confidence=self.minConfidence)
 
-        # Print out every rule with 2 items on the left hand side,
-        # 1 item on the right hand side, sorted by lift
-
         print('---------------------------------------------')
         print("                 TRANSACTIONS                ")
         print('---------------------------------------------')
-        rules_rhs = filter(lambda rule: len(rule.lhs) == 2 and len(rule.rhs) == 1, rules)
-        for rule in sorted(rules_rhs, key=lambda rule: rule.lift):
+        for rule in rules:
             print(rule)
 
         print('---------------------------------------------')
